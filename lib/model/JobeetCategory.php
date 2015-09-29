@@ -18,6 +18,14 @@
  */
 class JobeetCategory extends BaseJobeetCategory
 {
+  public function getActiveJobs()
+  {
+    $criteria = new Criteria();
+    $criteria->add(JobeetJobPeer::CATEGORY_ID, $this->getId());
+
+    return JobeetJobPeer::getActiveJobs($criteria);
+  }
+
   public function __toString()
   {
     return $this->getName();
