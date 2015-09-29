@@ -11,6 +11,7 @@ job_show_user:
   options:
     model: JobeetJob
     type:  object
+    method_for_criteria: doSelectActive
   param:   { module: job, action: show }
   requirements:
     id: \d+

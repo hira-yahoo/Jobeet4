@@ -31,4 +31,10 @@ class JobeetJobPeer extends BaseJobeetJobPeer {
     return self::doSelect($criteria);
   }
 
+  static public function doSelectActive(Criteria $criteria)
+  {
+    $criteria->add(JobeetJobPeer::EXPIRES_AT, time(), Criteria::GREATER_THAN);
+
+    return self::doSelectOne($criteria);
+  }
 } // JobeetJobPeer
