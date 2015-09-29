@@ -11,10 +11,7 @@ class jobActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $criteria = new Criteria();
-    $criteria->add(JobeetJobPeer::EXPIRES_AT, time(), Criteria::GREATER_THAN);
-
-    $this->jobeet_jobs = JobeetJobPeer::doSelect($criteria);
+    $this->jobeet_jobs = JobeetJobPeer::getActiveJobs();
   }
 
   public function executeShow(sfWebRequest $request)
