@@ -11,3 +11,5 @@ $t->is(Jobeet::slugify('sensio   labs'), 'sensio-labs', '::slugify() replaces se
 $t->is(Jobeet::slugify('  sensio'), 'sensio', '::slugify() removes - at the beginning of a string');
 $t->is(Jobeet::slugify('sensio  '), 'sensio', '::slugify() removes - at the end of a string');
 $t->is(Jobeet::slugify('paris,france'), 'paris-france', '::slugify() replaces non-ASCII characters by a -');
+
+$t->is(Jobeet::slugify(''), 'n-a', '::slugify() converts the empty string to n-a');
