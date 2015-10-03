@@ -17,5 +17,16 @@ class JobeetJobForm extends BaseJobeetJobForm
       $this->validatorSchema['email'],
       new sfValidatorEmail(),
     ));
+
+    $this->widgetSchema['type'] = new sfWidgetFormChoice(array(
+      'choices'  => JobeetJobPeer::$types,
+      'expanded' => true,
+    ));
+
+
+    $this->validatorSchema['type'] = new sfValidatorChoice(array(
+      'choices' => array_keys(JobeetJobPeer::$types),
+    ));
+
   }
 }
