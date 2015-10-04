@@ -42,6 +42,7 @@ class JobeetJobPeer extends BaseJobeetJobPeer
     }
 
     $criteria->add(self::EXPIRES_AT, time(), Criteria::GREATER_THAN);
+    $criteria->add(self::IS_ACTIVATED, true);
     $criteria->addDescendingOrderByColumn(self::CREATED_AT);
 
     return $criteria;

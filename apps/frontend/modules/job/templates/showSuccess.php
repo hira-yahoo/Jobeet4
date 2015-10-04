@@ -1,3 +1,7 @@
+<?php if ($sf_request->getParameter('token') == $job->getToken()): ?>
+  <?php include_partial('job/admin', array('job' => $job)) ?>
+<?php endif ?>
+
 <?php use_stylesheet('job.css') ?>
 <?php use_helper('Text') ?>
 <?php slot('title') ?>
