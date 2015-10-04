@@ -40,5 +40,11 @@ class JobeetJobForm extends BaseJobeetJobForm
       'how_to_apply'   => 'How to apply?',
     ));
 
+
+    $this->validatorSchema['logo'] = new sfValidatorFile(array(
+      'required'   => false,
+      'path'       => sfConfig::get('sf_upload_dir').'/jobs',
+      'mime_types' => 'web_images',
+    ));
   }
 }
