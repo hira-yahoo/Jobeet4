@@ -57,6 +57,11 @@ class JobeetJob extends BaseJobeetJob {
       $this->setExpiresAt($now + 86400 * sfConfig::get('app_active_days'));
     }
 
+    if (!$this->getToken())
+    {
+      $this->setToken(sha1($this->getEmail().rand(11111, 99999)));
+    }
+
     return parent::save($con);
   }
 
