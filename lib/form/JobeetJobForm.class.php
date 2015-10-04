@@ -33,5 +33,12 @@ class JobeetJobForm extends BaseJobeetJobForm
       'label' => 'Company logo',
     ));
 
+
+    $this->widgetSchema->setLabels(array(
+      'category_id'    => 'Category',
+      'is_public'      => 'Public?',
+      'how_to_apply'   => 'How to apply?',
+    ));
+
   }
 }
