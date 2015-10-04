@@ -28,5 +28,10 @@ class JobeetJobForm extends BaseJobeetJobForm
       'choices' => array_keys(JobeetJobPeer::$types),
     ));
 
+
+    $this->widgetSchema['logo'] = new sfWidgetFormInputFile(array(
+      'label' => 'Company logo',
+    ));
+
   }
 }
