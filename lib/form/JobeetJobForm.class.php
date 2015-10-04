@@ -46,5 +46,8 @@ class JobeetJobForm extends BaseJobeetJobForm
       'path'       => sfConfig::get('sf_upload_dir').'/jobs',
       'mime_types' => 'web_images',
     ));
+
+
+    $this->widgetSchema->setHelp('is_public', 'Whether the job can also be published on affiliate websites or not.');
   }
 }
