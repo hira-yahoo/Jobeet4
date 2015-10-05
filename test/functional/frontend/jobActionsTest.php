@@ -110,3 +110,28 @@ $browser->
     isError('email', 'invalid')->
   end()
 ;
+
+$browser->setTester('propel', 'sfTesterPropel');
+
+$browser->info('  3.3 - On the preview page, you can publish the job')->
+  createJob(array('position' => 'FOO1'))->
+  click('Publish', array(), array('method' => 'put', '_with_csrf' => true))->
+
+  with('propel')->begin()->
+    check('JobeetJob', array(
+      'position'     => 'FOO1',
+      'is_activated' => true,
+    ))->
+  end()
+;
+
+$browser->info('  3.4 - On the preview page, you can delete the job')->
+  createJob(array('position' => 'FOO2'))->
+  click('Delete', array(), array('method' => 'delete', '_with_csrf' => true))->
+
+  with('propel')->begin()->
+    check('JobeetJob', array(
+      'position' => 'FOO2',
+    ), false)->
+  end()
+;
