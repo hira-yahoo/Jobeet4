@@ -1,7 +1,7 @@
-log/
-cache/
-lib/model/map
-lib/model/om
-web/uploads/jobs
-!web/uploads/jobs/sensio-labs.gif
-!web/uploads/jobs/extreme-sensio.gif
+/log/
+/cache/
+/lib/model/map
+/lib/model/om
+/web/uploads/jobs
+!/web/uploads/jobs/sensio-labs.gif
+!/web/uploads/jobs/extreme-sensio.gif
