@@ -24,6 +24,15 @@ generator:
            (<em>%%email%%</em>) is looking for a %%=position%% (%%location%%)
         sort: [expires_at, desc]
         max_per_page: 10
+        batch_actions:
+          _delete:    ~
+          extend:     ~
+        object_actions:
+          extend:     ~
+          _edit:      ~
+          _delete:    ~
+        actions:
+          deleteNeverActivated: { label: Delete never activated jobs }
       filter:  ~
       form:    ~
       edit:
