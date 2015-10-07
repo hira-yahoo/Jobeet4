@@ -33,6 +33,7 @@ generator:
           _delete:    ~
         actions:
           deleteNeverActivated: { label: Delete never activated jobs }
+        peer_method: doSelectJoinJobeetCategory
       filter:  ~
       form:    ~
       edit:
