@@ -15,7 +15,8 @@ generator:
       actions: ~
       fields:  ~
       list:
-        title: Category Management
+        title:   Category Management
+        display: [=name, slug]
       filter:  ~
       form:    ~
       edit:

@@ -12,9 +12,14 @@ generator:
 
     config:
       actions: ~
-      fields:  ~
+      fields:
+        is_activated: { label: Activated?, help: Whether the user has activated the job, or not }
+        is_public:    { label: Public?, help: Whether the job can also be published on affiliate websites, or not }
       list:
-        title: Job Management
+        title:   Job Management
+        display: [company, position, location, url, is_activated, email]
+        fields:
+          is_public:    { label: "Public? (label for the list)" }
       filter:  ~
       form:    ~
       edit:
