@@ -17,9 +17,13 @@ generator:
         is_public:    { label: Public?, help: Whether the job can also be published on affiliate websites, or not }
       list:
         title:   Job Management
+        layout:  stacked
         display: [company, position, location, url, is_activated, email]
-        fields:
-          is_public:    { label: "Public? (label for the list)" }
+        params:  |
+          %%is_activated%% <small>%%jobeet_category%%</small> - %%company%%
+           (<em>%%email%%</em>) is looking for a %%=position%% (%%location%%)
+        sort: [expires_at, desc]
+        max_per_page: 10
       filter:  ~
       form:    ~
       edit:
