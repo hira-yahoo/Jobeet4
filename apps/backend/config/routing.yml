@@ -1,3 +1,12 @@
+jobeet_category:
+  class: sfPropelRouteCollection
+  options:
+    model:                JobeetCategory
+    module:               category
+    prefix_path:          /category
+    column:               id
+    with_wildcard_routes: true
+
 jobeet_job:
   class: sfPropelRouteCollection
   options:
